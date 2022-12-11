@@ -14,10 +14,13 @@ Messages starting with `#` will be ignored. In messages with multiple items, lin
 To edit items, react with the pencil icon, and send a message with the text to replace the item. Remove the reaction again to cancel.
 
 ## Running
-This bot is made with go, so you need to install the `go` toolchain to compile it.
+This bot is made with go, so you need to install the `go` toolchain to compile it. You need version **1.19**.
+
+Run `go mod tidy` once.
 
 Create an application and bot account in the discord developer portal.
 You need the "message content intent" so enable that.
+Make sure your bot has the permissions to send messages, read message history, delete messages, and add reactions
 
 Put the bot account token in a file called `token.secret` (Without the `Bot ` prefix).
 
