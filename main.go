@@ -215,7 +215,8 @@ func onMessageReactionRemove(s *discordgo.Session, r *discordgo.MessageReactionR
 	}
 	switch r.Emoji.Name {
 	case string(EMOJI_CHECK):
-		if msg.Reactions[slices.IndexFunc(msg.Reactions, func(rs *discordgo.MessageReactions) bool { return rs.Emoji.Name == string(EMOJI_CHECK) })].Count < 2 {
+		index := slices.IndexFunc(msg.Reactions, func(rs *discordgo.MessageReactions) bool { return rs.Emoji.Name == string(EMOJI_CHECK) })
+		if index == -1 || msg.Reactions[index].Count < 2 {
 			user, err := s.User(r.UserID)
 			var username string
 			if err != nil {
