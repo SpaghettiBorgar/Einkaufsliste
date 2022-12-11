@@ -110,6 +110,7 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageEdit(currentlyEditing.itemMessage.ChannelID, currentlyEditing.itemMessage.ID,
 			string(EMOJI_UNCHECKED)+" "+m.Content)
 		fmt.Printf("Edited %v to %v  (in %v by %v)\n", previousContent, m.Content, m.ChannelID, m.Author.Username)
+		s.ChannelMessageDelete(m.ChannelID, m.ID)
 		cancelEditing()
 
 		return
