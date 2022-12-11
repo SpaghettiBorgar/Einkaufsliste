@@ -1,0 +1,4 @@
+*.secret
+data.json
+log
+einkaufsliste
