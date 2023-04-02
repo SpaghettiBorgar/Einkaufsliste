@@ -29,7 +29,8 @@ const EMOJI_CHECK = '🛒'
 const EMOJI_DELETE = '🗑'
 const EMOJI_EDIT = '✏'
 const EMOJI_CHECKED = '✅'
-const EMOJI_UNCHECKED = '◻'
+const EMOJI_UNCHECKED = '⬜'
+const EMOJI_UNCHECKED_COMPAT = '◻'
 
 func init() {
 	dat, err := os.ReadFile("token.secret")
@@ -135,7 +136,7 @@ func onMessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 }
 
 func trimItem(item string) string {
-	return strings.TrimRight(strings.TrimLeft(item, "~ "+string(EMOJI_CHECKED)+string(EMOJI_UNCHECKED)), "~ ")
+	return strings.TrimRight(strings.TrimLeft(item, "~ "+string(EMOJI_CHECKED)+string(EMOJI_UNCHECKED)+string(EMOJI_UNCHECKED_COMPAT)), "~ ")
 }
 
 func checkItem(msg *discordgo.Message) {
