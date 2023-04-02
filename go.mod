@@ -2,7 +2,7 @@ module einkaufsliste
 
 go 1.19
 
-require github.com/bwmarrin/discordgo v0.26.1
+require github.com/bwmarrin/discordgo v0.27.1
 
 require (
 	github.com/gorilla/websocket v1.4.2 // indirect
